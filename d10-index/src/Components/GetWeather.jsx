@@ -1,4 +1,4 @@
-import { Container, Form, Row, Button, Col, ListGroup } from "react-bootstrap";
+import { Container, Form, Row, Button, Col, ListGroup, Badge } from "react-bootstrap";
 import { useState } from "react";
 
 const GetWeather = () => {
@@ -26,7 +26,7 @@ const GetWeather = () => {
     return (
         <Container>
             <Row>
-                <Col>
+                <Col xs={12}>
                     <div className="main-div">
                         <h1 className="heading">Welcome to Weather App</h1>
                         <Form className="text-center">
@@ -35,7 +35,7 @@ const GetWeather = () => {
                             </Form.Label>
                             <Form.Control
                                 type="text"
-                                placeholder=""
+                                placeholder="City"
                                 value={city}
                                 onChange={(e) => setCity(e.target.value)}
                             />
@@ -48,13 +48,13 @@ const GetWeather = () => {
                         <div>
                             {weather.main && (
                                 <ListGroup className="mt-3">
-                                    <ListGroup.Item>Current Temperature:{(weather.main.temp - 273.15).toFixed(2)} ºC{" "}</ListGroup.Item>
-                                    <ListGroup.Item>Sunrise: {new Date(weather.sys.sunrise * 1000).toLocaleTimeString('en-IN')}</ListGroup.Item>
-                                    <ListGroup.Item>Sunset: {new Date(weather.sys.sunset * 1000).toLocaleTimeString('en-IN')}</ListGroup.Item>
-                                    <ListGroup.Item>Feels like: {(weather.main.feels_like - 273.15).toFixed(2)} ºC{" "}</ListGroup.Item>
-                                    <ListGroup.Item>Humidity: {weather.main.humidity} %</ListGroup.Item>
-                                    <ListGroup.Item>Maximum Temperature: {(weather.main.temp_max - 273.15).toFixed(2)} ºC{" "}</ListGroup.Item>
-                                    <ListGroup.Item>Minimum Temperature: {(weather.main.temp_min - 273.15).toFixed(2)} ºC{" "}</ListGroup.Item>
+                                    <ListGroup.Item><b>Current Temperature: </b> <Badge pill variant="dark">{(weather.main.temp - 273.15).toFixed(2)} ºC{" "}</Badge> </ListGroup.Item>
+                                    <ListGroup.Item><b>Sunrise: </b> <Badge pill variant="dark">{new Date(weather.sys.sunrise * 1000).toLocaleTimeString('en-IN')}</Badge></ListGroup.Item>
+                                    <ListGroup.Item><b>Sunset: </b> <Badge pill variant="dark">{new Date(weather.sys.sunset * 1000).toLocaleTimeString('en-IN')}</Badge></ListGroup.Item>
+                                    <ListGroup.Item><b>Feels like: </b> <Badge pill variant="dark">{(weather.main.feels_like - 273.15).toFixed(2)} ºC{" "}</Badge></ListGroup.Item>
+                                    <ListGroup.Item><b>Humidity: </b> <Badge pill variant="dark">{weather.main.humidity} %</Badge></ListGroup.Item>
+                                    <ListGroup.Item><b>Maximum Temperature: </b> <Badge pill variant="dark">{(weather.main.temp_max - 273.15).toFixed(2)} ºC{" "}</Badge></ListGroup.Item>
+                                    <ListGroup.Item><b>Minimum Temperature: </b> <Badge pill variant="dark">{(weather.main.temp_min - 273.15).toFixed(2)} ºC{" "}</Badge></ListGroup.Item>
                                 </ListGroup>
                             )}
                         </div>

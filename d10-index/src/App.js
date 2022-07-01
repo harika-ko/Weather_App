@@ -9,8 +9,8 @@ function App() {
         <div id="cloud"></div>
       </div>
 
-      <div class="container">
-        <div class="sunny"></div>
+      <div className="container">
+        <div className="sunny"></div>
       </div>
       <div className="header">
         <GetWeather />
