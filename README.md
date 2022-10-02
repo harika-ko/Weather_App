@@ -1,6 +1,6 @@
 # Weather_App
 
-This is an application built to find out the weather in particular city across the world
+This is an application built to find out the weather in a particular city across the world.
 
 HomePage
 
